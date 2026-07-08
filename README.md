@@ -72,31 +72,6 @@ window.addEventListener('keydown', (e) => {
 });
 ```
 
-Finally, I wanted to make sure the site was accessible. I added a prefers-reduced-motion media query to ensure users with motion sensitivities can navigate safely.
-
-```css
-@media (prefers-reduced-motion: reduce) {
-  .header__icon-hamburger,
-  .header__icon-close,
-  .header__logo,
-  .is-open .header__nav-item::after,
-  .hero-grid__btn,
-  .hero-grid__btn img,
-  .hero-grid__cta,
-  .hero-grid__cta-arrow {
-    transition: none;
-  }
-
-  .header__menu:hover .header__icon-hamburger,
-  .header__menu:hover .header__icon-close,
-  .hero-grid__btn--prev:hover img,
-  .hero-grid__btn--next:hover img,
-  .hero-grid__cta:hover .hero-grid__cta-arrow {
-    transform: none;
-  }
-}
-```
-
 ## Author
 
 - Frontend Mentor - [@Kking927](https://www.frontendmentor.io/profile/Kking927)
