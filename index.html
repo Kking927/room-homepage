@@ -18,16 +18,16 @@
     <header class="header">
 
       <div class="header__nav-container">
-        <button class="header__menu" aria-label="Open menu" aria-expanded="false">
+        <button type="button" class="header__menu" aria-label="Open menu" aria-expanded="false">
           <img src="https://raw.githubusercontent.com/Kking927/room-homepage/90713d4cad7fc751ff9dcafedb8583b0f82a8b31/images/icon-hamburger.svg" alt="" class="header__icon-hamburger">
           <img src="https://raw.githubusercontent.com/Kking927/room-homepage/90713d4cad7fc751ff9dcafedb8583b0f82a8b31/images/icon-close.svg" alt="" class="header__icon-close">
         </button>
 
-        <h1 class="header__logo-link">
+        <div class="header__logo-container">
           <a href="/">
             <img src="https://raw.githubusercontent.com/Kking927/room-homepage/0b5a5be7c1549f2ba2de879069bf36d44a22ddda/images/logo.svg" alt="Room homepage" class="header__logo">
           </a>
-        </h1>
+        </div>
 
         <nav class="header__nav" aria-label="Main navigation">
           <ul class="header__nav-list">
@@ -40,30 +40,30 @@
       </div>
     </header>
 
-    <main>
+    <main class="main-layout">
       <section class="hero-grid">
         <div class="hero-grid__gallery">
 
           <div class="hero-grid__image-wrapper">
             <picture class="hero-grid__picture">
-              <source id="hero-desktop" media="(min-width: 1024px)" srcset="https://raw.githubusercontent.com/Kking927/room-homepage/main/images/desktop-image-hero-1.jpg">
+              <source id="hero-desktop" media="(min-width: 1024px)" srcset="https://raw.githubusercontent.com/Kking927/room-homepage/main/images/desktop-image-hero-1.jpg" width="840" height="534">
 
-              <img id="hero-mobile" src="https://raw.githubusercontent.com/Kking927/room-homepage/main/images/mobile-image-hero-1.jpg" alt="Beautiful modern chairs around a dining table" class="hero-grid__image">
+              <img id="hero-mobile" src="https://raw.githubusercontent.com/Kking927/room-homepage/main/images/mobile-image-hero-1.jpg" alt="Beautiful modern chairs around a dining table" class="hero-grid__image" width="375" height="360">
             </picture>
           </div>
 
           <div class="hero-grid__controls">
-            <button class="hero-grid__btn hero-grid__btn--prev" aria-label="Previous slide">
+            <button type="button" class="hero-grid__btn hero-grid__btn--prev" aria-label="Previous slide">
               <img src="https://raw.githubusercontent.com/Kking927/room-homepage/90713d4cad7fc751ff9dcafedb8583b0f82a8b31/images/icon-angle-left.svg" alt="" aria-hidden="true">
             </button>
-            <button class="hero-grid__btn hero-grid__btn--next" aria-label="Next slide">
+            <button type="button" class="hero-grid__btn hero-grid__btn--next" aria-label="Next slide">
               <img src="https://raw.githubusercontent.com/Kking927/room-homepage/90713d4cad7fc751ff9dcafedb8583b0f82a8b31/images/icon-angle-right.svg" alt="" aria-hidden="true">
             </button>
           </div>
         </div>
 
         <div class="hero-grid__content" aria-live="polite">
-          <h2 class="hero-grid__title">Discover innovative <br> ways to decorate</h2>
+          <h1 class="hero-grid__title">Discover innovative <br> ways to decorate</h1>
           <p class="hero-grid__description">
             We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love.
           </p>
@@ -76,11 +76,11 @@
 
       <section class="about-grid">
         <div class="about-grid__column about-grid__column--img">
-          <img src="https://raw.githubusercontent.com/Kking927/room-homepage/90713d4cad7fc751ff9dcafedb8583b0f82a8b31/images/image-about-dark.jpg" alt="Dark room interior featuring minimal black armchairs" class="about-grid__image">
+          <img src="https://raw.githubusercontent.com/Kking927/room-homepage/90713d4cad7fc751ff9dcafedb8583b0f82a8b31/images/image-about-dark.jpg" alt="Dark room interior featuring minimal black armchairs" class="about-grid__image" width="420" height="266">
         </div>
 
         <div class="about-grid__column about-grid__column--text">
-          <h3 class="about-grid__subtitle">About our furniture</h3>
+          <h2 class="about-grid__subtitle">About our furniture</h2>
           <p class="about-grid__description">
             Our multifunctional collection blends design and function to suit your individual taste.
             Make each room unique, or pick a cohesive theme that best express your interests and what
@@ -90,7 +90,7 @@
         </div>
 
         <div class="about-grid__column about-grid__column--img">
-          <img src="https://raw.githubusercontent.com/Kking927/room-homepage/90713d4cad7fc751ff9dcafedb8583b0f82a8b31/images/image-about-light.jpg" alt="A sleek modern white plastic chair against a bright background" class="about-grid__image">
+          <img src="https://raw.githubusercontent.com/Kking927/room-homepage/90713d4cad7fc751ff9dcafedb8583b0f82a8b31/images/image-about-light.jpg" alt="A sleek modern white plastic chair against a bright background" class="about-grid__image" width="440" height="266">
         </div>
       </section>
     </main>
