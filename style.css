@@ -30,7 +30,7 @@ img,
 picture {
   display: block;
   max-width: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 a {
@@ -447,9 +447,11 @@ main {
     grid-template-columns: 60% 40%;
     min-height: auto;
     gap: 0;
+    position: relative;
   }
 
   .hero-grid__gallery {
+    position: static;
     display: flex;
     flex-direction: column;
   }
@@ -461,14 +463,22 @@ main {
     line-height: 0;
   }
 
-  .hero-grid__controls {
+ .hero-grid__controls {
     position: absolute;
     bottom: 0;
-    left: 100%;
+    left: 60%; 
     right: auto;
+    width: 11%; 
     display: flex;
     z-index: 10;
     transform: none;
+  }
+  
+  .hero-grid__btn {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .hero-grid__content {
