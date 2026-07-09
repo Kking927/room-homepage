@@ -13,6 +13,8 @@
   --fs-sub-heading: clamp(0.875rem, 0.83rem + 0.23vw, 1rem);
 
   --header-padding-y: clamp(1.875rem, 1.16rem + 2.39vw, 3rem);
+  --padding-inline-fluid: clamp(1.25rem, 0.16rem + 4.63vw, 4.5rem);
+  --padding-block-fluid: clamp(1.5rem, 0.99rem + 2.22vw, 3rem);
 
   --btn-width: clamp(2.125rem, 1.3rem + 4.11vw, 5rem);
   --btn-height: clamp(2.125rem, 1.3rem + 4.11vw, 5rem);
@@ -159,14 +161,8 @@ body {
 
 .is-open .header__logo-link {
   display: none;
-}
-
-.header__logo-container {
-  transition: filter 0.3s ease;
-}
-
-.header__logo-container:hover {
-  filter: invert(1);
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .header__nav {
@@ -284,7 +280,8 @@ main {
 }
 
 .hero-grid__content {
-  padding-inline: clamp(1.25rem, 0.16rem + 4.63vw, 4.5rem);
+  padding-block: var(--padding-block-fluid);
+  padding-inline: var(--padding-inline-fluid);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -309,7 +306,7 @@ main {
 .hero-grid__cta {
   display: inline-flex;
   align-items: center;
-  gap: 2rem;
+  gap: clamp(1.25rem, -0.54rem + 2.79vw, 2rem);
   color: var(--grey-800);
   text-transform: uppercase;
   letter-spacing: 12px;
@@ -355,7 +352,8 @@ main {
   justify-content: center;
   align-items: flex-start;
   gap: 0.5rem;
-  padding: clamp(1.5rem, 0.99rem + 2.22vw, 3rem);
+  padding-block: var(--padding-block-fluid);
+  padding-inline: var(--padding-inline-fluid);
 }
 
 .about-grid__subtitle {
@@ -371,9 +369,9 @@ main {
 }
 
 /* ==========================================================================
-   DESKTOP MEDIA QUERIES (1024px / 64rem and up)
+   DESKTOP MEDIA QUERIES (1262px / 78.875rem and up)
    ========================================================================== */
-@media (min-width: 64rem) {
+@media (min-width: 78.875rem) {
   /* --- DESKTOP HEADER NAVIGATION --- */
   .header {
     display: block;
@@ -389,10 +387,10 @@ main {
     height: auto;
     display: flex;
     align-items: center;
-    gap: 3.5rem;
-    padding-inline: 4rem;
-    padding-block-start: 4rem;
     background-color: transparent;
+    padding-block-start: clamp(2.5rem, -1.07rem + 5.58vw, 4rem);
+    padding-inline: clamp(2rem, -2.77rem + 7.44vw, 4rem);
+    gap: clamp(2rem, -1.57rem + 5.58vw, 3.5rem);
   }
 
   .header__menu {
@@ -401,6 +399,11 @@ main {
 
   .header__logo-container {
     display: block;
+    transition: filter 0.3s ease;
+  }
+
+  .header:not(.is-open) .header__logo-container:hover {
+    filter: invert(1);
   }
 
   .header__nav {
@@ -411,7 +414,7 @@ main {
   .is-open .header__nav-list {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: clamp(1.25rem, -0.54rem + 2.79vw, 2rem);
   }
 
   .header__nav-item,
@@ -461,7 +464,7 @@ main {
   }
 
   .hero-grid__gallery {
-    position: relative;
+    position: static;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -471,6 +474,8 @@ main {
     width: 100%;
     aspect-ratio: 840 / 534;
     height: auto;
+    overflow: hidden;
+    max-height: none;
   }
 
   .hero-grid__image {
@@ -482,9 +487,10 @@ main {
   .hero-grid__controls {
     position: absolute;
     bottom: 0;
-    left: 100%;
+    left: 60%;
     right: auto;
-    width: calc(var(--btn-width) * 2);
+    width: 11vw;
+    max-width: 158px;
     display: flex;
     z-index: 10;
     transform: none;
@@ -492,9 +498,8 @@ main {
 
   .hero-grid__btn {
     flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: auto;
+    height: var(--btn-height);
   }
 
   .hero-grid__content {
@@ -504,13 +509,13 @@ main {
     align-items: flex-start;
     position: relative;
   }
-  
+
   .hero-grid__title {
-    margin-block-end: 2rem;
+    margin-block-end: clamp(1rem, 0.78rem + 0.93vw, 1.5rem);
   }
-  
+
   .hero-grid__description {
-    margin-block-end: 2rem;
+    margin-block-end: clamp(1rem, 0.78rem + 0.93vw, 1.5rem);
   }
 
   .about-grid {
@@ -526,20 +531,20 @@ main {
   }
 
   .about-grid__column--text {
-    min-height: 16.625rem;
+    min-height: clamp(14rem, 7.74rem + 9.77vw, 16.625rem);
   }
 
   .about-grid__column:nth-child(1) .about-grid__image {
     width: 100%;
     aspect-ratio: 420 / 266;
-    max-height: 16.625rem;
+    max-height: clamp(14rem, 7.74rem + 9.77vw, 16.625rem);
     object-fit: cover;
   }
 
   .about-grid__column:nth-child(3) .about-grid__image {
     width: 100%;
     aspect-ratio: 440 / 266;
-    max-height: 16.625rem;
+    max-height: clamp(14rem, 7.74rem + 9.77vw, 16.625rem);
     object-fit: cover;
     position: relative;
   }
