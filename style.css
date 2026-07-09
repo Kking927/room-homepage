@@ -163,6 +163,14 @@ body {
   display: none;
   visibility: hidden;
   pointer-events: none;
+  cursor: default;
+}
+
+.is-open .header__logo-container {
+  display: none;
+  pointer-events: none;
+  visibility: hidden;
+  filter: none;
 }
 
 .header__nav {
