@@ -100,6 +100,14 @@ body {
   justify-self: start;
 }
 
+.header__logo-container {
+  transition: filter 0.3s ease;
+}
+
+.header__logo-container:hover {
+  filter: invert(1);
+}
+
 .header__logo-link {
   grid-column: 2;
   justify-self: center;
@@ -163,7 +171,7 @@ body {
   height: auto;
   z-index: 100;
   padding-inline: clamp(1rem, 0.79rem + 1.07vw, 1.5rem);
-  padding-block: 2rem;
+  padding-block: clamp(1.25rem, 0.95rem + 1.28vw, 2rem);
 }
 
 .is-open .header__icon-hamburger {
@@ -319,7 +327,7 @@ main {
   gap: clamp(1.25rem, -0.54rem + 2.79vw, 2rem);
   color: var(--grey-800);
   text-transform: uppercase;
-  letter-spacing: 12px;
+  letter-spacing: 0.75em;
   font-weight: var(--semi-bold);
   font-size: var(--fs-sub-heading);
   width: fit-content;
@@ -383,7 +391,7 @@ main {
 /* ==========================================================================
    DESKTOP MEDIA QUERIES (1262px / 78.875rem and up)
    ========================================================================== */
-@media (min-width:  68rem) {
+@media (min-width: 68rem) {
   /* --- DESKTOP HEADER NAVIGATION --- */
   .header {
     display: block;
@@ -411,11 +419,6 @@ main {
 
   .header__logo-container {
     display: block;
-    transition: filter 0.3s ease;
-  }
-
-  .header:not(.is-open) .header__logo-container:hover {
-    filter: invert(1);
   }
 
   .header__nav {
@@ -568,17 +571,19 @@ main {
   .header__menu:active .header__icon-close,
   .hero-grid__btn--prev:hover img,
   .hero-grid__btn--next:hover img,
-  .hero-grid__cta:hover .hero-grid__cta-arrow {
+  .hero-grid__cta:hover .hero-grid__cta-arrow,
+  .hero-grid .hero-grid__controls {
     transform: none;
+    transition: none;
   }
 
-  .header__nav-item::after {
+  .header .header__nav-item::after {
     width: 100%;
     opacity: 0;
     transition: opacity 0.25s ease;
   }
 
-  .header__nav-item:hover::after {
+  .header .header__nav-item:hover::after {
     opacity: 1;
   }
 
