@@ -11,19 +11,19 @@ menuBtn.addEventListener('click', () => {
 });
 
 // Slideshow Functionality
-// 1. Array holding all the images for the slideshow
+// 1. Array holding local file directory paths for slider targets
 const slides = [
   {
-    desktop: "https://raw.githubusercontent.com/Kking927/room-homepage/main/images/desktop-image-hero-1.jpg",
-    mobile: "https://raw.githubusercontent.com/Kking927/room-homepage/main/images/mobile-image-hero-1.jpg"
+    desktop: "images/desktop-image-hero-1.jpg",
+    mobile: "images/mobile-image-hero-1.jpg"
   },
   {
-    desktop: "https://raw.githubusercontent.com/Kking927/room-homepage/main/images/desktop-image-hero-2.jpg",
-    mobile: "https://raw.githubusercontent.com/Kking927/room-homepage/main/images/mobile-image-hero-2.jpg"
+    desktop: "images/desktop-image-hero-2.jpg",
+    mobile: "images/mobile-image-hero-2.jpg"
   },
   {
-    desktop: "https://raw.githubusercontent.com/Kking927/room-homepage/main/images/desktop-image-hero-3.jpg",
-    mobile: "https://raw.githubusercontent.com/Kking927/room-homepage/main/images/mobile-image-hero-3.jpg"
+    desktop: "images/desktop-image-hero-3.jpg",
+    mobile: "images/mobile-image-hero-3.jpg"
   }
 ];
 
