@@ -14,8 +14,8 @@
 
   --header-padding-y: clamp(1.875rem, 1.16rem + 2.39vw, 3rem);
   --hero-inline-fluid: clamp(1.25rem, 0.11rem + 3.42vw, 4.5rem);
-  --hero-block-fluid: clamp(1.5rem, 0.99rem + 2.22vw, 3rem);
-  --about-inline-fluid: clamp(1.375rem, 0.98rem + 1.69vw, 2.5rem);
+  --section-block-fluid: clamp(1.5rem, 0.99rem + 2.22vw, 3rem);
+  --about-inline-fluid: clamp(1.25rem, 0.86rem + 1.69vw, 2.5rem);
 
   --btn-width: clamp(2.125rem, 1.3rem + 4.11vw, 5rem);
   --btn-height: clamp(2.125rem, 1.3rem + 4.11vw, 5rem);
@@ -235,6 +235,7 @@ main {
   width: 100%;
   aspect-ratio: 375 / 360;
   overflow: hidden;
+  max-height: 60vh;
 }
 
 .hero-grid__picture {
@@ -289,7 +290,7 @@ main {
 }
 
 .hero-grid__content {
-  padding-block: var(--hero-block-fluid);
+  padding-block: var(--section-block-fluid);
   padding-inline: var(--hero-inline-fluid);
   display: flex;
   flex-direction: column;
@@ -337,7 +338,7 @@ main {
 }
 
 /* ==========================================================================
-   ABOUT CONTENT GRID (MOBILE-FIRST)
+   ABOUT CONTENT GRID
    ========================================================================== */
 .about-grid {
   display: flex;
@@ -354,6 +355,7 @@ main {
   height: 100%;
   object-fit: cover;
   display: block;
+  max-height: 60vh;
 }
 
 .about-grid__column--text {
@@ -363,6 +365,7 @@ main {
   align-items: flex-start;
   gap: 0.5rem;
   padding-inline: var(--about-inline-fluid);
+  padding-block: var(--section-block-fluid);
 }
 
 .about-grid__subtitle {
@@ -380,7 +383,7 @@ main {
 /* ==========================================================================
    DESKTOP MEDIA QUERIES (1262px / 78.875rem and up)
    ========================================================================== */
-@media (min-width: 78.875rem) {
+@media (min-width:  68rem) {
   /* --- DESKTOP HEADER NAVIGATION --- */
   .header {
     display: block;
@@ -480,9 +483,9 @@ main {
   }
 
   .hero-grid__image-wrapper {
-    width: 100%;
-    aspect-ratio: 840 / 534;
-    height: auto;
+   width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
     overflow: hidden;
     max-height: none;
   }
