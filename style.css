@@ -95,6 +95,60 @@ body {
   padding-inline: clamp(1.5rem, 0.95rem + 2.35vw, 3.5rem);
 }
 
+.header__menu {
+  grid-column: 1;
+  justify-self: start;
+}
+
+.header__logo-link {
+  grid-column: 2;
+  justify-self: center;
+}
+
+.header__nav {
+  display: none;
+}
+
+.header__icon-hamburger {
+  display: block;
+  transition: filter 0.3s ease, transform 0.2s ease;
+}
+
+.header__icon-close {
+  display: none;
+}
+
+.header__icon-hamburger,
+.header__icon-close {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.header__nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0.125rem;
+  background-color: var(--black);
+  transition: width 0.2s ease;
+}
+
+.header__menu:hover .header__icon-hamburger,
+.header__menu:hover .header__icon-close {
+  transform: translateY(-3px) scale(1.03);
+}
+
+.header__menu:active .header__icon-hamburger,
+.header__menu:active .header__icon-close {
+  transform: translateY(1px) scale(0.97);
+}
+
+.header__nav-item:hover::after {
+  width: 100%;
+}
+
 .is-open .header__nav-container {
   display: flex;
   align-items: center;
@@ -108,25 +162,11 @@ body {
   min-height: 6.875rem;
   height: auto;
   z-index: 100;
-  padding-inline: 1.5rem;
+  padding-inline: clamp(1rem, 0.79rem + 1.07vw, 1.5rem);
   padding-block: 2rem;
 }
 
-.header__menu {
-  grid-column: 1;
-  justify-self: start;
-}
-
-.header__icon-hamburger {
-  display: block;
-  transition: filter 0.3s ease, transform 0.2s ease;
-}
-
 .is-open .header__icon-hamburger {
-  display: none;
-}
-
-.header__icon-close {
   display: none;
 }
 
@@ -138,26 +178,6 @@ body {
 
 .is-open .header__icon-close:hover {
   filter: brightness(0);
-}
-
-.header__icon-hamburger,
-.header__icon-close {
-  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.header__menu:hover .header__icon-hamburger,
-.header__menu:hover .header__icon-close {
-  transform: translateY(-3px) scale(1.03);
-}
-
-.header__menu:active .header__icon-hamburger,
-.header__menu:active .header__icon-close {
-  transform: translateY(1px) scale(0.97);
-}
-
-.header__logo-link {
-  grid-column: 2;
-  justify-self: center;
 }
 
 .is-open .header__logo-link {
@@ -172,10 +192,6 @@ body {
   pointer-events: none;
   visibility: hidden;
   filter: none;
-}
-
-.header__nav {
-  display: none;
 }
 
 .is-open .header__nav {
@@ -196,22 +212,6 @@ body {
   font-size: 1rem;
   position: relative;
   padding-block: 0.5rem;
-}
-
-.header__nav-item::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0.125rem;
-  background-color: var(--black);
-  transition: width 0.2s ease;
-}
-
-.is-open .header__nav-item:hover::after {
-  width: 100%;
 }
 
 /* ==========================================================================
@@ -302,7 +302,7 @@ main {
   color: var(--black);
   font-size: var(--fs-hero-title);
   font-weight: var(--semi-bold);
-  letter-spacing: -1px;
+  letter-spacing: -0.03125em;
   line-height: 1;
   min-width: 20ch;
   margin-block-end: clamp(0.5rem, 0.32rem + 0.75vw, 1rem);
@@ -558,33 +558,32 @@ main {
   }
 }
 
-/* Prefers Reduced Motion Media Query   */
+/* ==========================================================================
+   ACCESSIBLE REDUCED MOTION ALTERNATIVES
+   ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
-  .header__icon-hamburger,
-  .header__icon-close,
-  .header__logo,
-  .header__nav-item::after,
-  .is-open .header__nav-item::after,
-  .hero-grid__btn,
-  .hero-grid__btn img,
-  .hero-grid__cta,
-  .hero-grid__cta-arrow {
-    transition: none;
-  }
-
   .header__menu:hover .header__icon-hamburger,
   .header__menu:hover .header__icon-close,
   .header__menu:active .header__icon-hamburger,
-  .header__menu:active .header__icon-close {
-    transform: none;
-  }
-
+  .header__menu:active .header__icon-close,
   .hero-grid__btn--prev:hover img,
-  .hero-grid__btn--next:hover img {
-    transform: none;
-  }
-
+  .hero-grid__btn--next:hover img,
   .hero-grid__cta:hover .hero-grid__cta-arrow {
     transform: none;
+  }
+
+  .header__nav-item::after {
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .header__nav-item:hover::after {
+    opacity: 1;
+  }
+
+  .header__icon-hamburger,
+  .is-open .header__icon-close:hover {
+    transition: filter 0.25s ease;
   }
 }
