@@ -13,8 +13,9 @@
   --fs-sub-heading: clamp(0.875rem, 0.83rem + 0.23vw, 1rem);
 
   --header-padding-y: clamp(1.875rem, 1.16rem + 2.39vw, 3rem);
-  --padding-inline-fluid: clamp(1.25rem, 0.16rem + 4.63vw, 4.5rem);
-  --padding-block-fluid: clamp(1.5rem, 0.99rem + 2.22vw, 3rem);
+  --hero-inline-fluid: clamp(1.25rem, 0.11rem + 3.42vw, 4.5rem);
+  --hero-block-fluid: clamp(1.5rem, 0.99rem + 2.22vw, 3rem);
+  --about-inline-fluid: clamp(1.375rem, 0.98rem + 1.69vw, 2.5rem);
 
   --btn-width: clamp(2.125rem, 1.3rem + 4.11vw, 5rem);
   --btn-height: clamp(2.125rem, 1.3rem + 4.11vw, 5rem);
@@ -273,7 +274,7 @@ main {
 }
 
 .hero-grid__btn img {
-  width: 12px;
+  width: 0.75rem;
   height: auto;
   pointer-events: none;
   transition: transform 0.2s ease;
@@ -288,27 +289,27 @@ main {
 }
 
 .hero-grid__content {
-  padding-block: var(--padding-block-fluid);
-  padding-inline: var(--padding-inline-fluid);
+  padding-block: var(--hero-block-fluid);
+  padding-inline: var(--hero-inline-fluid);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
 }
 
 .hero-grid__title {
   color: var(--black);
   font-size: var(--fs-hero-title);
-  font-weight: var(--bold);
+  font-weight: var(--semi-bold);
   letter-spacing: -1px;
-  line-height: 1.1;
+  line-height: 1;
   min-width: 20ch;
-  margin-block-end: 1rem;
+  margin-block-end: clamp(0.5rem, 0.32rem + 0.75vw, 1rem);
 }
 
 .hero-grid__description {
   color: var(--grey-500);
-  margin-block-end: 2rem;
+  margin-block-end: clamp(1rem, 0.82rem + 0.75vw, 1.5rem);
 }
 
 .hero-grid__cta {
@@ -345,6 +346,7 @@ main {
 
 .about-grid__column {
   width: 100%;
+  height: 100%;
 }
 
 .about-grid__image {
@@ -360,8 +362,7 @@ main {
   justify-content: center;
   align-items: flex-start;
   gap: 0.5rem;
-  padding-block: var(--padding-block-fluid);
-  padding-inline: var(--padding-inline-fluid);
+  padding-inline: var(--about-inline-fluid);
 }
 
 .about-grid__subtitle {
@@ -518,24 +519,18 @@ main {
     position: relative;
   }
 
-  .hero-grid__title {
-    margin-block-end: clamp(1rem, 0.78rem + 0.93vw, 1.5rem);
-  }
-
-  .hero-grid__description {
-    margin-block-end: clamp(1rem, 0.78rem + 0.93vw, 1.5rem);
-  }
-
   .about-grid {
     display: grid;
     grid-template-columns: 30% 41% 29%;
     height: auto;
-    align-items: start;
+    align-items: stretch;
     gap: 0;
   }
 
   .about-grid__column {
     width: 100%;
+    height: 100%;
+    display: flex;
   }
 
   .about-grid__column--text {
@@ -544,16 +539,18 @@ main {
 
   .about-grid__column:nth-child(1) .about-grid__image {
     width: 100%;
-    aspect-ratio: 420 / 266;
-    max-height: clamp(14rem, 7.74rem + 9.77vw, 16.625rem);
+    height: 100%;
     object-fit: cover;
+    aspect-ratio: auto;
+    max-height: none;
   }
 
   .about-grid__column:nth-child(3) .about-grid__image {
     width: 100%;
-    aspect-ratio: 440 / 266;
-    max-height: clamp(14rem, 7.74rem + 9.77vw, 16.625rem);
+    height: 100%;
     object-fit: cover;
+    aspect-ratio: auto;
+    max-height: none;
     position: relative;
   }
 }
