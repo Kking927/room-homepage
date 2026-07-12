@@ -478,6 +478,10 @@ main {
     min-height: 2rem;
   }
 
+  .hero-grid__description {
+    width: 45ch;
+  }
+
   .hero-grid__gallery {
     position: static;
     display: flex;
