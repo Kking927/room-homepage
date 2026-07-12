@@ -560,8 +560,11 @@ main {
     height: 100%;
     object-fit: cover;
     aspect-ratio: auto;
-    max-height: none;
     position: relative;
+  }
+  
+  .about-grid .about-grid__image {
+    max-height: none;
   }
 }
 
