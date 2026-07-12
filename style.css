@@ -312,7 +312,6 @@ main {
   font-weight: var(--semi-bold);
   letter-spacing: -0.03125em;
   line-height: 1;
-  min-width: 20ch;
   margin-block-end: clamp(0.5rem, 0.32rem + 0.75vw, 1rem);
 }
 
