@@ -14,7 +14,7 @@
 
   --header-padding-y: clamp(1.875rem, 1.16rem + 2.39vw, 3rem);
   --hero-inline-fluid: clamp(1.25rem, 0.11rem + 3.42vw, 4.5rem);
-  --section-block-fluid: clamp(1.5rem, 0.99rem + 2.22vw, 3rem);
+  --section-block-fluid: clamp(1rem, 0.5rem + 2.5vw, 1.5rem);
   --about-inline-fluid: clamp(1.25rem, 0.86rem + 1.69vw, 2.5rem);
 
   --btn-width: clamp(2.125rem, 1.3rem + 4.11vw, 5rem);
@@ -464,18 +464,6 @@ main {
     gap: 0;
     position: relative;
     align-items: stretch;
-  }
-
-  .hero-grid__content::before {
-    content: "";
-    flex-grow: 1;
-    min-height: 2rem;
-  }
-
-  .hero-grid__content::after {
-    content: "";
-    flex-grow: 2;
-    min-height: 2rem;
   }
 
   .hero-grid__description {
