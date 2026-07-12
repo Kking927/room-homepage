@@ -312,6 +312,7 @@ main {
   font-weight: var(--semi-bold);
   letter-spacing: -0.03125em;
   line-height: 1;
+  max-width: 18ch;
   margin-block-end: clamp(0.5rem, 0.32rem + 0.75vw, 1rem);
 }
 
@@ -458,7 +459,7 @@ main {
 
   .hero-grid {
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 59% 41%;
     min-height: auto;
     gap: 0;
     position: relative;
@@ -493,10 +494,10 @@ main {
   .hero-grid__controls {
     position: absolute;
     bottom: 0;
-    left: 60%;
+    left: 59%;
     right: auto;
-    width: 11vw;
-    max-width: 158px;
+    width: 11.5vw;
+    max-width: 165.6px;
     display: flex;
     z-index: 10;
     transform: none;
@@ -518,7 +519,7 @@ main {
 
   .about-grid {
     display: grid;
-    grid-template-columns: 30% 41% 29%;
+    grid-template-columns: 29.5% 41% 29.5%;
     height: auto;
     align-items: stretch;
     gap: 0;
